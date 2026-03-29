@@ -1,34 +1,65 @@
-# openalex-example
+# OpenAlex Explorer
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A web app for searching, sorting, and filtering scholarly works using the [OpenAlex API](https://openalex.org) — a fully open catalog of the global research system with hundreds of millions of academic works, authors, institutions, and more.
+
+## Features
+
+- **Author Search** — Find academic works by author name via the OpenAlex authors API
+- **Date Filtering** — Narrow results by publication year range (start and/or end year)
+- **Sortable Data Table** — Browse results in a paginated table powered by [TanStack Table](https://tanstack.com/table)
+- **Rich Metadata** — View title, type, language, publication date, citation count, and direct links to works
+- **Form Validation** — Input validated with [Zod](https://zod.dev) schemas via [React Hook Form](https://react-hook-form.com)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | [Next.js 16](https://nextjs.org) (App Router, Turbopack) |
+| UI Components | [shadcn/ui](https://ui.shadcn.com) (Radix UI primitives) |
+| Styling | [Tailwind CSS 4](https://tailwindcss.com) |
+| Data Table | [TanStack Table](https://tanstack.com/table) |
+| Validation | [Zod](https://zod.dev) + [React Hook Form](https://react-hook-form.com) |
+| Language | TypeScript |
 
 ## Getting Started
 
-First, install the dependencies and run the development server:
+### Prerequisites
+
+- [Node.js](https://nodejs.org) 18+
+- [pnpm](https://pnpm.io)
+
+### Installation
 
 ```bash
-pnpm i
-pnpm dev
-
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) to use the app.
 
-## Learn More
+### Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm build
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Enter an author name in the search form
+2. Optionally set a publication year range to filter results
+3. The app queries the [OpenAlex API](https://docs.openalex.org) to find matching authors and their works
+4. Results are displayed in a paginated, sortable data table
 
-## Deploy on Vercel
+## What is OpenAlex?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[OpenAlex](https://openalex.org) is a free and open index of the world's research system. It catalogs scholarly works, authors, institutions, sources, topics, publishers, and funders — forming a graph of hundreds of millions of entities. OpenAlex serves as an open alternative to paywalled services like Scopus and Web of Science, with roughly twice the coverage and significantly better representation of non-English works and the Global South.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is provided as an example application for learning and reference.
